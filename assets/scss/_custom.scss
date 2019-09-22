@@ -1,0 +1,54 @@
+button {
+    border: 0;
+    padding: 10px 15px;
+    color: #fff;
+    font-weight: 400;
+    outline: none!important;
+    background: map-get($theme-colors, 'warning');
+    display: block;
+    @include breakpoints(769px){
+        display: none;
+    }
+    @include breakpoints(900px){
+        display: block;
+    }
+    @extend %success;
+    @include disabled($disabled: false);
+}
+
+.alert:hover, %success {
+    font-weight: 600;
+}
+%success {
+    &:hover {
+       background: map-get($theme-colors, 'success');
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 1150px;
+    background-color: #0000ff;
+    margin: 0 auto;
+    &--full {
+        @extend .container;
+        width: 50%;
+    }
+}
+
+@for $i from 1 through 10 {
+    .mt-#{$i} {
+        margin-top: #{$i};
+    }
+}
+
+
+$num: 1;
+@while $num < 6 {
+    .module-#{$num} {
+        content: "#{$num}";
+    }
+    $num: $num + 1;
+}
+
+

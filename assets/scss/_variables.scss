@@ -1,0 +1,31 @@
+
+
+$blue: #436EEE;
+$comicfont: "Comic Sans MS", cursive, sans-serif;
+$spacing: 48px;
+
+$theme-colors: (
+  "success": #28a745,
+  "info": #17a2b8,
+  "warning": #ffc107,
+);
+
+$devices: (
+    '320px' 'sm' 'mobile',
+    '768px' 'md' 'tablet',
+    '1024px' 'lg' 'desktop',
+);
+
+$mobile: 320px;
+
+
+
+.strong:hover, %strong-alert {
+  font-weight: bold;
+}
+
+%strong-alert:hover {
+  color: red;
+}
+
+

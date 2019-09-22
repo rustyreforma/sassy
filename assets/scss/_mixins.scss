@@ -1,0 +1,30 @@
+
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin breakpoints($size) {
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin disabled($disabled: true) {
+    @if $disabled {
+        background: #cccccc;
+    } @else {
+        background: #00ff00;
+    }
+}
+
+@each $size, $device in $devices {
+    @include breakpoints(#{$size}) {
+        @for $i from 1 through 10 {
+            .col-#{$device}-#{$i} {
+                flex: 0 0  calc((#{$i} * 100%) / 12);
+            }
+        }
+    }
+}
